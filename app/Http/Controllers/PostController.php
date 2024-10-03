@@ -10,7 +10,6 @@ class PostController extends Controller
 {
     public function store(PostRequest $request, $website_id)
     {
-
         $website = Website::findOrFail($website_id);
 
         $post = Post::create([

@@ -10,7 +10,6 @@ class WebsiteController extends Controller
 {
     public function store(WebsiteRequest $request)
     {
-        
         $website = Website::create([
             'name' => $request->name,
             'url' => $request->url,
