@@ -2,18 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\WebsiteRequest;
 use App\Models\Website;
-use Illuminate\Http\Request;
+
 
 class WebsiteController extends Controller
 {
-    public function store(Request $request)
+    public function store(WebsiteRequest $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'url' => 'required|url|unique:websites,url',
-        ]);
-
+        
         $website = Website::create([
             'name' => $request->name,
             'url' => $request->url,

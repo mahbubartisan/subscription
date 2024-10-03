@@ -2,18 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\Website;
-use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function store(Request $request, $website_id)
+    public function store(PostRequest $request, $website_id)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-        ]);
 
         $website = Website::findOrFail($website_id);
 
