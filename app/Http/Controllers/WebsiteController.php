@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\WebsiteRequest;
 use App\Models\Website;
 
-
 class WebsiteController extends Controller
 {
     public function store(WebsiteRequest $request)

@@ -27,18 +27,12 @@ class NewPostNotification extends Mailable
         );
     }
 
-    
     public function build()
     {
         return $this->subject('New Post on ' . $this->post->website->name)
             ->view('mail.new-post');
     }
 
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
     public function attachments(): array
     {
         return [];
